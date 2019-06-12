@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+{% load staticfiles %}
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <link rel="stylesheet" href="{% static "css/demo.css" %}">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+
+    <title></title>
+  </head>
+  <body>
+    <div class="container-fluid text-center">
+
+        <h1 class="text-center text-danger">Jaipur Job Info</h1>
+    <img src="{% static "images/jaipur.jpg" %}" class="mr-3" alt="">
+    <img src="{% static "images/jaipur.jpg" %}" class="mr-3" alt="">
+    <img src="{% static "images/jaipur.jpg" %}" class="mr-3" alt="">
+    <img src="{% static "images/jaipur.jpg" %}" class="mr-3" alt="">
+    <img src="{% static "images/jaipur.jpg" %}" class="mr-3" alt="">
+    <img src="{% static "images/jaipur.jpg" %}" class="mr-3" alt="">
+    <img src="{% static "images/jaipur.jpg" %}" alt="">
+    <hr>
+
+    {% if joblist %}
+    <table class="table-bordered " align="center">
+      <thead>
+        <th>Date</th>
+        <th>Company</th>
+        <th>Title</th>
+        <th>Eligibility</th>
+        <th>Address</th>
+        <th>Email</th>
+        <th>PhoneNumber</th>
+        </thead>
+        {% for job in joblist %}
+        <tr>
+          <td>{{job.date}}</td>
+          <td>{{job.company}}</td>
+          <td>{{job.title}}</td>
+          <td>{{job.eligibility}}</td>
+          <td>{{job.address}}</td>
+          <td>{{job.email}}</td>
+          <td>{{job.phonenumber}}</td>
+        </tr>
+        {% endfor %}
+        {% endif %}
+    </table>
+    </div>
+
+  </body>
+</html>
